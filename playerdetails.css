@@ -1,0 +1,84 @@
+*/ {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+body {
+    width: 0rem;
+    height: 0rem;
+    background-color: rgb(37, 35, 35);   
+    padding-left: 25rem;
+   
+}
+.playerdetails{
+    border-style: double;
+    width: 50rem;
+    height: 65rem;
+    border-radius: 3rem;
+    background-color: white;
+    box-shadow: 0px 0px 50px rgb(5, 167, 207);
+}
+.card{
+    padding-left: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    width: auto; 
+    height: 1rem;
+}
+.name{
+    margin: 0.5rem;
+}
+.details{
+    font-size: 2rem;
+    color: rgb(152, 148, 207);
+    margin: 0rem;
+}
+.playername{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+}
+.photo{
+    width: 40%;
+}
+.team{
+    margin: 0.5rem; 
+}
+.teamname{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    color: rgb(2, 49, 255);
+}
+.price{
+    margin-top: 0rem; 
+    margin-bottom: 0rem;
+}
+.amount{
+    padding-bottom: 0rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.playingstatus{
+    margin: 00.5rem;
+}
+.status{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+}
+.playingrole{
+    margin: 0.5rem;
+}
+.role{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+}
+

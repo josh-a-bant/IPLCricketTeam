@@ -1,0 +1,76 @@
+*{
+    margin: 0rem;
+    padding: 0rem;
+}
+.container{
+    background-color: rgb(221, 117, 137);}
+.TeamDetails{
+    /* background-color: rgb(218, 211, 203); */
+    height: 40rem;
+    margin: 5rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    text-align: center;
+    align-content: center;
+    /* border-style: ridge;   */
+}
+.teamname{
+    color: rgb(13, 13, 14);
+    font-size: 4rem;
+    font-weight: bold;
+}
+.details{
+    font-size: 1.5rem;
+    color: rgb(236, 147, 147);
+}
+.teamicon-1{
+    width: 20rem;
+    color: transparent;
+    border-style:groove;
+    box-shadow: 2px 2px 10px black;   
+    border-radius: 1rem;
+    margin-left: 37%;
+    margin-top: 1rem;
+}
+img{
+    width: 100%;
+    border-radius: 1rem;
+    /* background-color: transparent; */
+
+}
+.playercount{
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+.topbatsman{
+    color: rgb(43, 42, 41);
+    font-size: 4rem;
+    font-style: inherit;
+}
+.topbowler{
+    color: rgb(36, 54, 58);
+    font-size: 4rem;
+    font-style: inherit;
+}
+.championsowncount{
+    font-size: 3rem;
+}
+/* .playerscard{
+   
+    text-align: center;
+    justify-content: center;
+    border-style: 1rem solid groove;
+    border-radius: 2rem;
+    float: left;
+    margin: 1rem;
+    margin: 15rem;
+} */
+/* .photo{
+    
+}  */
+.playerphoto{
+    width: 100%;
+    margin: 0rem;
+    border-top-right-radius: 2rem ;
+    border-top-left-radius: 2rem;
+}

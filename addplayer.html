@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Player | IPLCricket</title>
+    <script type="text/javascript" src="players.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <form rolw="form text-white p-5">
+
+            <div class="form-group">
+                <label>Player ID <span class="text-danger">*</span></label>
+                <input type="text" id="player-id" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Player Name <span class="text-danger">*</span></label>
+                <input type="text" id="player-name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Player Image <span class="text-danger">*</span></label>
+                <input type="file" id="player-image" class="form-control-file">
+            </div>
+
+
+            <div class="form-group">
+                <label>Team <span class="text-danger">*</span></label>
+                <input type="text" id="player-team" class="form-control">
+
+            </div>
+
+            <div class="form-group">
+                <label>Base Price <span class="text-danger">*</span></label>
+                <input type="text" id="base-price" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Playing Status<span class="text-danger">*</span></label>
+                <input type="text" id="status" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Description <span class="text-danger">*</span></label>
+                <input type="text" id="player-details" min="0" value="" class="form-control">
+            </div>
+
+            <br>
+            <button class="btn btn-outline-light" onclick="store()">Add Player</button>
+
+
+
+            <button class="btn btn-outline-light" onclick="show()">Show Team</button>
+
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function store() {
+            const Pid = document.getElementById('player-id').value;
+            const name = document.getElementById('player-name').value;
+            const player_image = document.getElementById('player-image').value;
+            const player_team = document.getElementById('player-team').value;
+            const base_price = document.getElementById('base-price').value;
+            const status = document.getElementById('status').value;
+            const description = document.getElementById('player-details').value;
+
+            let teamDetails = JSON.parse(window.localStorage.getItem('teams'));
+
+
+            //validate team starts
+            teamFlag = true;
+            teamDetails.forEach(element => {
+                if (element.teamlogo == player_team) {
+                    teamFlag = false;
+                }
+            });
+            if (teamFlag) {
+                alert('please enter valid team');
+                return;
+            }
+            //validate team ends
+
+            let objPlayer = {
+                id: Pid,
+                playerName: name,
+                playerphoto: player_image,
+                from: player_team,
+                price: base_price,
+                isplaying: status,
+                description: description
+
+            };
+
+
+
+            let players = JSON.parse(window.localStorage.getItem('players'));
+
+
+            if (players != null && players.length > 0) {
+                players.push(objPlayer);
+                window.localStorage.setItem('players', JSON.stringify(players));
+            } else {
+                window.localStorage.setItem('players', JSON.stringify(playersDtl));
+                store();
+            }
+
+            //add data to teams array
+            teamDetails.forEach(element => {
+                if (element.teamlogo == player_team) {
+                    element.players.push(objPlayer);
+                    window.localStorage.setItem('teams', JSON.stringify(teamDetails));
+                }
+            });
+
+            alert("New Player " + objPlayer.playerName + " Added Successfully");
+
+        }
+    </script>
+
+</body>
+
+</html>

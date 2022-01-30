@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Team | IPLCricket</title>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/css/font-awesome-5.8.1.css">
+    <link rel="stylesheet" href="bootstrap/css/animate.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+
+<body>
+    <style>
+        html * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .form-control {
+            padding: 5px;
+            margin-left: 50px;
+        }
+    </style>
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="#">Add Team </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav> -->
+
+    <div class="container mt-5">
+
+        <form rolw="form text-white p-5">
+
+            <div class="form-group">
+                <label>Team Name <span class="text-danger">*</span></label>
+                <input type="text" id="Team_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Team Icon <span class="text-danger">*</span></label>
+                <input type="file" id="Team_icon" class="form-control-file">
+            </div>
+
+
+            <div class="form-group">
+                <label>Player Count <span class="text-danger">*</span></label>
+                <input type="number" id="player_count" class="form-control">
+
+            </div>
+
+            <div class="form-group">
+                <label>Top Batsman <span class="text-danger">*</span></label>
+                <input type="text" id="Top_batsman" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Top Bowler <span class="text-danger">*</span></label>
+                <input type="text" id="Top_Bowler" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Championship Own <span class="text-danger">*</span></label>
+                <input type="number" id="Championship_own" min="0" value="" class="form-control">
+            </div>
+
+            <br>
+            <button class="btn btn-outline-light" onclick="storeTeam()">Add Team</button>
+
+
+
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function storeTeam() {
+            const key = document.getElementById('Team_name').value;
+            const name = document.getElementById('Team_name').value;
+            const icon = document.getElementById('Team_icon').value;
+            const playercount = document.getElementById('player_count').value;
+            const batsman = document.getElementById('Top_batsman').value;
+            const bowler = document.getElementById('Top_Bowler').value;
+            const cup = document.getElementById('Championship_own').value;
+
+            let objTeam = {
+                teamlogo: key,
+                teamname: name,
+                teamIcon: icon,
+                playercount: playercount,
+                topbatsman: batsman,
+                topBowler: bowler,
+                championsowncount: cup,
+                players: [],
+            };
+            window.localStorage.setItem('teams', JSON.stringify(teams));
+            let teamDetails = JSON.parse(window.localStorage.getItem('teams'));
+
+            console.log(teamDetails);
+            teamDetails.push(objTeam);
+            window.localStorage.setItem('teams', JSON.stringify(teamDetails));
+
+        }
+    </script>
+    <div style="margin-top: 400px"></div>
+    <!-- <script src="jquery-3.3.1.min.js"></script>
+
+    <script src="bootstrap.min.js"></script> -->
+</body>
+
+</html>
